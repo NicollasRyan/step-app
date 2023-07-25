@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { GlobalStyle } from "./styles/global";
+import { Step1 } from "./pages/Step1";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +14,11 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route element={<App />}></Route>
+        <Route element={<App />}>
+          <Route path="/" element={<Step1 />} />
+          <Route />
+          <Route />
+        </Route>
       </Routes>
     </Router>
     <GlobalStyle />
