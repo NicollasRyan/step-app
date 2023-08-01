@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { GlobalStyle } from "./styles/global";
 import { Step1 } from "./pages/Step1";
 import { StepProvider } from "./context/StepContext";
+import { Step2 } from "./pages/Step2";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,8 +19,7 @@ root.render(
         <Routes>
           <Route element={<App />}>
             <Route path="/" element={<Step1 />} />
-            <Route />
-            <Route />
+            <Route path="/step2" element={<Step2 />} />
           </Route>
         </Routes>
       </Router>

@@ -6,6 +6,11 @@ type State = {
   birthday: string;
   profession: string;
   contacts: string;
+  continuousMedication: string;
+  hormonalDysfunction: string;
+  eatingHabits: string;
+  intestine: string;
+  physicalActivity: string;
 };
 
 type Action = {
@@ -28,6 +33,11 @@ const initialData: State = {
   birthday: "",
   profession: "",
   contacts: "",
+  continuousMedication: "",
+  hormonalDysfunction: "",
+  eatingHabits: "",
+  intestine: "",
+  physicalActivity: "",
 };
 
 const StepContext = createContext<ContextType | undefined>(undefined);
@@ -38,11 +48,11 @@ export enum StepActions {
   setBirthday,
   setProfession,
   setContacts,
-  //   setContinuousMedication,
-  //   setHormonalDysfunction,
-  //   setEatingHabits,
-  //   setIntestine,
-  //   setPhysicalActivity,
+  setContinuousMedication,
+  setHormonalDysfunction,
+  setEatingHabits,
+  setIntestine,
+  setPhysicalActivity,
 }
 const stepReducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -56,6 +66,16 @@ const stepReducer = (state: State, action: Action) => {
       return { ...state, profession: action.payload };
     case StepActions.setContacts:
       return { ...state, contacts: action.payload };
+    case StepActions.setContinuousMedication:
+      return { ...state, continuousMedication: action.payload };
+    case StepActions.setHormonalDysfunction:
+      return { ...state, hormonalDysfunction: action.payload };
+    case StepActions.setEatingHabits:
+      return { ...state, eatingHabits: action.payload };
+    case StepActions.setIntestine:
+      return { ...state, intestine: action.payload };
+    case StepActions.setPhysicalActivity:
+      return { ...state, physicalActivity: action.payload };
     default:
       return state;
   }
