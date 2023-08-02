@@ -5,6 +5,8 @@ import {
   Grid,
   FormControlLabel,
   Checkbox,
+  RadioGroup,
+  Radio,
 } from "@mui/material";
 
 import { Title, Input } from "./styled";
@@ -43,34 +45,22 @@ export function Step2() {
       <Title>Indentficação:</Title>
       <Grid container spacing={2}>
         <Grid item xs={7}>
-          <FormControlLabel
-            label="Sim"
-            control={
-              <Checkbox
-                checked={showInput}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                  setShowInput(e.target.checked);
-                }}
-              />
-            }
-          />
-          <FormControlLabel
-            label="Não"
-            control={
-              <Checkbox
-                value="não"
-                onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                  dispatch({
-                    type: StepActions.setContinuousMedication,
-                    payload: e.target.value,
-                  });
-                }}
-              />
-            }
-          />
+          <RadioGroup
+            value={state.continuousMedication}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: StepActions.setContinuousMedication,
+                payload: e.target.value,
+              });
+              setShowInput(e.target.value === "");
+            }}
+          >
+            <FormControlLabel label="Sim" control={<Radio value="" />} />
+            <FormControlLabel label="Não" control={<Radio value="não" />} />
+          </RadioGroup>
           {showInput && (
             <Input
-              label="Nome"
+              label="Qual?"
               variant="standard"
               value={state.continuousMedication}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
