@@ -14,7 +14,7 @@ import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect, useState } from "react";
 // import { DateField } from "@mui/x-date-pickers";
 
-export function Step2() {
+export function Step3() {
   const [inputContinuousMedication, setInputContinuousMedication] =
     useState(false);
   const [inputHormonalDysfunction, setInputHormonalDysfunction] =
@@ -41,8 +41,7 @@ export function Step2() {
       state.intestine !== "" &&
       state.gestation !== "" &&
       state.chronicHealth !== "" &&
-      state.hernia !== "" &&
-      state.hypertension !== ""
+      state.hernia !== ""
     ) {
       navigate("/step3");
     } else {
@@ -246,22 +245,6 @@ export function Step2() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
                 type: StepActions.setHernia,
-                payload: e.target.value,
-              });
-            }}
-          >
-            <FormControlLabel label="Sim." control={<Radio value="sim" />} />
-            <FormControlLabel label="Não." control={<Radio value="nao" />} />
-          </RadioGroup>
-        </Grid>
-        <Grid item xs={7}>
-          <FormLabel>Hipertensão?</FormLabel>
-          <RadioGroup
-            row
-            value={state.hypertension}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              dispatch({
-                type: StepActions.setHypertension,
                 payload: e.target.value,
               });
             }}

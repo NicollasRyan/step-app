@@ -14,6 +14,7 @@ type State = {
   gestation: string;
   chronicHealth: string;
   hernia: string;
+  hypertension: string;
 };
 
 type Action = {
@@ -44,6 +45,7 @@ const initialData: State = {
   gestation: "",
   chronicHealth: "",
   hernia: "",
+  hypertension: "",
 };
 
 const StepContext = createContext<ContextType | undefined>(undefined);
@@ -62,6 +64,7 @@ export enum StepActions {
   setGestation,
   setChronicHealth,
   setHernia,
+  setHypertension,
 }
 
 const stepReducer = (state: State, action: Action) => {
@@ -92,6 +95,8 @@ const stepReducer = (state: State, action: Action) => {
       return { ...state, chronicHealth: action.payload };
     case StepActions.setHernia:
       return { ...state, hernia: action.payload };
+    case StepActions.setHypertension:
+      return { ...state, hypertension: action.payload };
     default:
       return state;
   }
