@@ -20,6 +20,15 @@ type State = {
   cramps: string;
   surgery: string;
   column: string;
+  competent: string;
+  dynamicTonicity: string;
+  tonicityRest: string;
+  dome: string;
+  diastasis: string;
+  supraAbdominal: string;
+  waist: string;
+  bellyButton: string;
+  infraAbdomina: string;
 };
 
 type Action = {
@@ -56,6 +65,15 @@ const initialData: State = {
   cramps: "",
   surgery: "",
   column: " ",
+  competent: "",
+  dynamicTonicity: "",
+  tonicityRest: "",
+  dome: "",
+  diastasis: "",
+  supraAbdominal: "",
+  waist: "",
+  bellyButton: "",
+  infraAbdomina: "",
 };
 
 const StepContext = createContext<ContextType | undefined>(undefined);
@@ -80,6 +98,15 @@ export enum StepActions {
   setCramps,
   setSurgery,
   setColumn,
+  setCompetent,
+  setDynamicTonicity,
+  setTonicityRest,
+  setDome,
+  setDiastasis,
+  setSupraAbdominal,
+  setWaist,
+  setBellyButton,
+  setInfraAbdomina,
 }
 
 const stepReducer = (state: State, action: Action) => {
@@ -122,6 +149,24 @@ const stepReducer = (state: State, action: Action) => {
       return { ...state, surgery: action.payload };
     case StepActions.setColumn:
       return { ...state, column: action.payload };
+    case StepActions.setCompetent:
+      return { ...state, competnt: action.payload };
+    case StepActions.setDynamicTonicity:
+      return { ...state, dynamicTonicity: action.payload };
+    case StepActions.setTonicityRest:
+      return { ...state, tonicityRest: action.payload };
+    case StepActions.setDome:
+      return { ...state, dome: action.payload };
+    case StepActions.setDiastasis:
+      return { ...state, diastasis: action.payload };
+    case StepActions.setSupraAbdominal:
+      return { ...state, supraAbdominal: action.payload };
+    case StepActions.setWaist:
+      return { ...state, waist: action.payload };
+    case StepActions.setBellyButton:
+      return { ...state, bellybutton: action.payload };
+    case StepActions.setInfraAbdomina:
+      return { ...state, infraAbdomina: action.payload };
     default:
       return state;
   }
