@@ -35,13 +35,11 @@ export function Step3() {
 
   const handleNextStep = () => {
     if (
-      state.continuousMedication !== "" &&
-      state.hormonalDysfunction !== "" &&
-      state.eatingHabits !== "" &&
-      state.intestine !== "" &&
-      state.gestation !== "" &&
-      state.chronicHealth !== "" &&
-      state.hernia !== ""
+      state.competent !== "" &&
+      state.dynamicTonicity !== "" &&
+      state.tonicityRest !== "" &&
+      state.dome !== "" &&
+      state.diastasis !== ""
     ) {
       navigate("/step3");
     } else {
@@ -51,184 +49,115 @@ export function Step3() {
 
   return (
     <Container>
-      <Title>Indentficação:</Title>
+      <Title>Abdômen:</Title>
       <Grid container spacing={2}>
         <Grid item xs={7}>
-          <FormLabel>Uso de algum medicamento contínuo?</FormLabel>
+          <FormLabel>Avl.competência abdominal</FormLabel>
           <RadioGroup
             row
-            value={state.continuousMedication}
+            value={state.competent}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
-                type: StepActions.setContinuousMedication,
-                payload: e.target.value,
-              });
-              setInputContinuousMedication(e.target.value === "...");
-            }}
-          >
-            <FormControlLabel label="Sim" control={<Radio value="..." />} />
-            <FormControlLabel label="Não" control={<Radio value="nao" />} />
-          </RadioGroup>
-          {inputContinuousMedication && (
-            <Input
-              label="Qual?"
-              variant="standard"
-              value={state.continuousMedication}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                dispatch({
-                  type: StepActions.setContinuousMedication,
-                  payload: e.target.value,
-                });
-              }}
-            />
-          )}
-        </Grid>
-        <Grid item xs={7}>
-          <FormLabel>Possui alguma disfunção hormonal diagnosticada?</FormLabel>
-          <RadioGroup
-            row
-            value={state.hormonalDysfunction}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              dispatch({
-                type: StepActions.setHormonalDysfunction,
-                payload: e.target.value,
-              });
-              setInputHormonalDysfunction(e.target.value === "...");
-            }}
-          >
-            <FormControlLabel label="Sim" control={<Radio value="..." />} />
-            <FormControlLabel label="Não" control={<Radio value="nao" />} />
-          </RadioGroup>
-          {inputHormonalDysfunction && (
-            <Input
-              label="Qual?"
-              variant="standard"
-              value={state.hormonalDysfunction}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                dispatch({
-                  type: StepActions.setHormonalDysfunction,
-                  payload: e.target.value,
-                });
-              }}
-            />
-          )}
-        </Grid>
-        <Grid item xs={7}>
-          <FormLabel>Hábitos alimentares:</FormLabel>
-          <RadioGroup
-            row
-            value={state.eatingHabits}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              dispatch({
-                type: StepActions.setEatingHabits,
+                type: StepActions.setCompetent,
                 payload: e.target.value,
               });
             }}
           >
             <FormControlLabel
-              label="Livre."
-              control={<Radio value="livre" />}
+              label="Muito pouco"
+              control={<Radio value="muito pouco" />}
             />
+            <FormControlLabel label="Algum" control={<Radio value="algum" />} />
             <FormControlLabel
-              label="Balanceada."
-              control={<Radio value="balanceada" />}
+              label="Bastante"
+              control={<Radio value="bastante" />}
             />
-            <FormControlLabel
-              label="Acompanhada de um nutricionista"
-              control={<Radio value="acompanhada de um nutricionista" />}
-            />
+            <FormControlLabel label="Muito" control={<Radio value="muito" />} />
           </RadioGroup>
         </Grid>
         <Grid item xs={7}>
-          <FormLabel>Funcionamento do intestino:</FormLabel>
+          <FormLabel>Avl tonicidade abdominal(dinâmica)</FormLabel>
           <RadioGroup
             row
-            value={state.intestine}
+            value={state.dynamicTonicity}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
-                type: StepActions.setIntestine,
+                type: StepActions.setDynamicTonicity,
                 payload: e.target.value,
               });
             }}
           >
             <FormControlLabel
-              label="Normal."
-              control={<Radio value="normal" />}
+              label="Muito pouco"
+              control={<Radio value="muito pouco" />}
+            />
+            <FormControlLabel label="Algum" control={<Radio value="algum" />} />
+            <FormControlLabel
+              label="Bastante"
+              control={<Radio value="bastante" />}
+            />
+            <FormControlLabel label="Muito" control={<Radio value="muito" />} />
+          </RadioGroup>
+        </Grid>
+        <Grid item xs={7}>
+          <FormLabel>Avl da tonicidade(repouso)</FormLabel>
+          <RadioGroup
+            row
+            value={state.tonicityRest}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: StepActions.setTonicityRest,
+                payload: e.target.value,
+              });
+            }}
+          >
+            <FormControlLabel
+              label="Muito pouco"
+              control={<Radio value="muito pouco" />}
+            />
+            <FormControlLabel label="Algum" control={<Radio value="algum" />} />
+            <FormControlLabel
+              label="Bastante"
+              control={<Radio value="bastante" />}
+            />
+            <FormControlLabel label="Muito" control={<Radio value="muito" />} />
+          </RadioGroup>
+        </Grid>
+        <Grid item xs={7}>
+          <FormLabel>Avaliação da cúpula diafragmática</FormLabel>
+          <RadioGroup
+            row
+            value={state.dome}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: StepActions.setDome,
+                payload: e.target.value,
+              });
+            }}
+          >
+            <FormControlLabel
+              label="Hipotônico"
+              control={<Radio value="hipotônico" />}
             />
             <FormControlLabel
-              label="Constipação."
-              control={<Radio value="constipação" />}
+              label="Hipertônico"
+              control={<Radio value="hipertônico" />}
             />
+            <FormControlLabel
+              label="Normotônico"
+              control={<Radio value="normotônico" />}
+            />
+            <FormControlLabel label="Muito" control={<Radio value="muito" />} />
           </RadioGroup>
         </Grid>
         <Grid item xs={7}>
-          <FormLabel>Atividade física?</FormLabel>
+          <FormLabel>Diástase</FormLabel>
           <RadioGroup
             row
-            value={state.physicalActivity}
+            value={state.diastasis}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
-                type: StepActions.setPhysicalActivity,
-                payload: e.target.value,
-              });
-              setInputPhysicalActivity(e.target.value === "...");
-            }}
-          >
-            <FormControlLabel label="Sim" control={<Radio value="..." />} />
-            <FormControlLabel label="Não" control={<Radio value="nao" />} />
-          </RadioGroup>
-          {inputPhysicalActivity && (
-            <Input
-              label="Qual?"
-              variant="standard"
-              value={state.physicalActivity}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                dispatch({
-                  type: StepActions.setPhysicalActivity,
-                  payload: e.target.value,
-                });
-              }}
-            />
-          )}
-        </Grid>
-        <Grid item xs={7}>
-          <FormLabel>Alguma gestação?</FormLabel>
-          <RadioGroup
-            row
-            value={state.gestation}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              dispatch({
-                type: StepActions.setGestation,
-                payload: e.target.value,
-              });
-              setInputGestation(e.target.value === "...");
-            }}
-          >
-            <FormControlLabel label="Sim" control={<Radio value="..." />} />
-            <FormControlLabel label="Não" control={<Radio value="nao" />} />
-          </RadioGroup>
-          {inputGestation && (
-            <Input
-              label="Tempo da útima?"
-              variant="standard"
-              value={state.gestation}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                dispatch({
-                  type: StepActions.setGestation,
-                  payload: e.target.value,
-                });
-              }}
-            />
-          )}
-        </Grid>
-        <Grid item xs={7}>
-          <FormLabel>Algum problema de saúde crônico?</FormLabel>
-          <RadioGroup
-            row
-            value={state.chronicHealth}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              dispatch({
-                type: StepActions.setChronicHealth,
+                type: StepActions.setDiastasis,
                 payload: e.target.value,
               });
             }}
@@ -238,20 +167,56 @@ export function Step3() {
           </RadioGroup>
         </Grid>
         <Grid item xs={7}>
-          <FormLabel>Já teve alguma hérnia abdominal e corrigiu?</FormLabel>
-          <RadioGroup
-            row
-            value={state.hernia}
+          <Input
+            label="Supra abdominal"
+            variant="standard"
+            value={state.supraAbdominal}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
-                type: StepActions.setHernia,
+                type: StepActions.setSupraAbdominal,
                 payload: e.target.value,
               });
             }}
-          >
-            <FormControlLabel label="Sim." control={<Radio value="sim" />} />
-            <FormControlLabel label="Não." control={<Radio value="nao" />} />
-          </RadioGroup>
+          />
+        </Grid>
+        <Grid item xs={7}>
+          <Input
+            label="Cintura"
+            variant="standard"
+            value={state.waist}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: StepActions.setWaist,
+                payload: e.target.value,
+              });
+            }}
+          />
+        </Grid>
+        <Grid item xs={7}>
+          <Input
+            label="Umbigo"
+            variant="standard"
+            value={state.bellyButton}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: StepActions.setBellyButton,
+                payload: e.target.value,
+              });
+            }}
+          />
+        </Grid>
+        <Grid item xs={7}>
+          <Input
+            label="Infra abdominal"
+            variant="standard"
+            value={state.infraAbdomina}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: StepActions.setInfraAbdomina,
+                payload: e.target.value,
+              });
+            }}
+          />
         </Grid>
       </Grid>
       <Button onClick={handleNextStep}>Proximo</Button>

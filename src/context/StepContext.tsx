@@ -25,10 +25,10 @@ type State = {
   tonicityRest: string;
   dome: string;
   diastasis: string;
-  supraAbdominal: string;
-  waist: string;
-  bellyButton: string;
-  infraAbdomina: string;
+  supraAbdominal: number;
+  waist: number;
+  bellyButton: number;
+  infraAbdomina: number;
 };
 
 type Action = {
@@ -70,10 +70,10 @@ const initialData: State = {
   tonicityRest: "",
   dome: "",
   diastasis: "",
-  supraAbdominal: "",
-  waist: "",
-  bellyButton: "",
-  infraAbdomina: "",
+  supraAbdominal: 0,
+  waist: 0,
+  bellyButton: 0,
+  infraAbdomina: 0,
 };
 
 const StepContext = createContext<ContextType | undefined>(undefined);
