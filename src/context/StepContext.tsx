@@ -15,6 +15,11 @@ type State = {
   chronicHealth: string;
   hernia: string;
   hypertension: string;
+  cardiac: string;
+  urinary: string;
+  cramps: string;
+  surgery: string;
+  column: string;
 };
 
 type Action = {
@@ -37,15 +42,20 @@ const initialData: State = {
   birthday: "",
   profession: "",
   contacts: "",
-  continuousMedication: "",
-  hormonalDysfunction: "",
+  continuousMedication: " ",
+  hormonalDysfunction: " ",
   eatingHabits: "",
   intestine: "",
-  physicalActivity: "",
-  gestation: "",
+  physicalActivity: " ",
+  gestation: " ",
   chronicHealth: "",
   hernia: "",
   hypertension: "",
+  cardiac: "",
+  urinary: " ",
+  cramps: "",
+  surgery: "",
+  column: " ",
 };
 
 const StepContext = createContext<ContextType | undefined>(undefined);
@@ -65,6 +75,11 @@ export enum StepActions {
   setChronicHealth,
   setHernia,
   setHypertension,
+  setCardiac,
+  setUrinary,
+  setCramps,
+  setSurgery,
+  setColumn,
 }
 
 const stepReducer = (state: State, action: Action) => {
@@ -97,6 +112,16 @@ const stepReducer = (state: State, action: Action) => {
       return { ...state, hernia: action.payload };
     case StepActions.setHypertension:
       return { ...state, hypertension: action.payload };
+    case StepActions.setCardiac:
+      return { ...state, cardiac: action.payload };
+    case StepActions.setUrinary:
+      return { ...state, urinary: action.payload };
+    case StepActions.setCramps:
+      return { ...state, cramps: action.payload };
+    case StepActions.setSurgery:
+      return { ...state, surgery: action.payload };
+    case StepActions.setColumn:
+      return { ...state, column: action.payload };
     default:
       return state;
   }
