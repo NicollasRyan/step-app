@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Button,
   Container,
@@ -390,6 +390,7 @@ export function Step2() {
         </Grid>
       </Grid>
       <Button onClick={handleNextStep}>Proximo</Button>
+      <Link to="/">volta</Link>
     </Container>
   );
 }

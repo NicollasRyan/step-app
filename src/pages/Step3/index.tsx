@@ -12,24 +12,17 @@ import {
 import { Title, Input } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import { DateField } from "@mui/x-date-pickers";
 
 export function Step3() {
-  const [inputContinuousMedication, setInputContinuousMedication] =
-    useState(false);
-  const [inputHormonalDysfunction, setInputHormonalDysfunction] =
-    useState(false);
-  const [inputPhysicalActivity, setInputPhysicalActivity] = useState(false);
-  useState(false);
-  const [inputGestation, setInputGestation] = useState(false);
-
   const navigate = useNavigate();
   const { state, dispatch } = useStep();
 
   useEffect(() => {
     dispatch({
       type: StepActions.setCurrentStep,
-      payload: 2,
+      payload: 3,
     });
   }, []);
 
@@ -41,7 +34,7 @@ export function Step3() {
       state.dome !== "" &&
       state.diastasis !== ""
     ) {
-      navigate("/step3");
+      console.log(state);
     } else {
       alert("Preencha todos os dados!");
     }
@@ -220,6 +213,7 @@ export function Step3() {
         </Grid>
       </Grid>
       <Button onClick={handleNextStep}>Proximo</Button>
+      <Link to="/step2">volta</Link>
     </Container>
   );
 }

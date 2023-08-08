@@ -150,7 +150,7 @@ const stepReducer = (state: State, action: Action) => {
     case StepActions.setColumn:
       return { ...state, column: action.payload };
     case StepActions.setCompetent:
-      return { ...state, competnt: action.payload };
+      return { ...state, competent: action.payload };
     case StepActions.setDynamicTonicity:
       return { ...state, dynamicTonicity: action.payload };
     case StepActions.setTonicityRest:
@@ -164,7 +164,7 @@ const stepReducer = (state: State, action: Action) => {
     case StepActions.setWaist:
       return { ...state, waist: action.payload };
     case StepActions.setBellyButton:
-      return { ...state, bellybutton: action.payload };
+      return { ...state, bellyButton: action.payload };
     case StepActions.setInfraAbdomina:
       return { ...state, infraAbdomina: action.payload };
     default:
