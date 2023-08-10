@@ -29,6 +29,7 @@ type State = {
   waist: number;
   bellyButton: number;
   infraAbdomina: number;
+  formattedDate: string;
 };
 
 type Action = {
@@ -74,6 +75,7 @@ const initialData: State = {
   waist: 0,
   bellyButton: 0,
   infraAbdomina: 0,
+  formattedDate: "",
 };
 
 const StepContext = createContext<ContextType | undefined>(undefined);
@@ -107,6 +109,7 @@ export enum StepActions {
   setWaist,
   setBellyButton,
   setInfraAbdomina,
+  setFormattedDate,
 }
 
 const stepReducer = (state: State, action: Action) => {
@@ -167,6 +170,8 @@ const stepReducer = (state: State, action: Action) => {
       return { ...state, bellyButton: action.payload };
     case StepActions.setInfraAbdomina:
       return { ...state, infraAbdomina: action.payload };
+    case StepActions.setFormattedDate:
+      return { ...state, formattedDate: action.payload };
     default:
       return state;
   }

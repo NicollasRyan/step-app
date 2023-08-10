@@ -34,6 +34,10 @@ export function Step3() {
       state.dome !== "" &&
       state.diastasis !== ""
     ) {
+      const current = new Date();
+      const formattedDate = current.toDateString();
+      state.formattedDate = formattedDate;
+
       console.log(state);
     } else {
       alert("Preencha todos os dados!");

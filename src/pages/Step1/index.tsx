@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Container, Grid } from "@mui/material";
+import { Container, FormLabel, Grid, Button } from "@mui/material";
 
-import { Title, Input } from "./styled";
+import { Title, Input, BoxNext } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect } from "react";
 // import { DateField } from "@mui/x-date-pickers";
@@ -47,9 +47,10 @@ export function Step1() {
             }}
           />
         </Grid>
-        <Grid item xs={7}>
+        <Grid style={{ display: "flex", flexDirection: "column" }} item xs={7}>
+          <FormLabel>Data de nacimento</FormLabel>
           <Input
-            label="Data de Nacimento"
+            type="date"
             variant="standard"
             value={state.birthday}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
@@ -87,7 +88,9 @@ export function Step1() {
           />
         </Grid>
       </Grid>
-      <Button onClick={handleNextStep}>Proximo</Button>
+      <BoxNext>
+        <Button onClick={handleNextStep}>Proximo</Button>
+      </BoxNext>
     </Container>
   );
 }
