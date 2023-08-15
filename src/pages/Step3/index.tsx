@@ -9,9 +9,9 @@ import {
   FormLabel,
 } from "@mui/material";
 
-import { Title, Input } from "./styled";
+import { Title, Input, ButtonNext } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import { DateField } from "@mui/x-date-pickers";
 
@@ -216,7 +216,7 @@ export function Step3() {
           />
         </Grid>
       </Grid>
-      <Button onClick={handleNextStep}>Proximo</Button>
+      <ButtonNext onClick={handleNextStep}>Proximo</ButtonNext>
       <Link to="/step2">volta</Link>
     </Container>
   );

@@ -9,7 +9,7 @@ import {
   FormLabel,
 } from "@mui/material";
 
-import { Title, Input } from "./styled";
+import { Title, Input, BackButton, ButtonNext } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect, useState } from "react";
 // import { DateField } from "@mui/x-date-pickers";
@@ -389,8 +389,8 @@ export function Step2() {
           )}
         </Grid>
       </Grid>
-      <Button onClick={handleNextStep}>Proximo</Button>
-      <Link to="/">volta</Link>
+      <ButtonNext onClick={handleNextStep}>Proximo</ButtonNext>
+      <BackButton to="/">volta</BackButton>
     </Container>
   );
 }
