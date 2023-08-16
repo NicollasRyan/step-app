@@ -216,7 +216,7 @@ export function Step3() {
           />
         </Grid>
       </Grid>
-      <ButtonNext onClick={handleNextStep}>Proximo</ButtonNext>
+      <ButtonNext onClick={handleNextStep}>Enviar</ButtonNext>
       <Link to="/step2">volta</Link>
     </Container>
   );
