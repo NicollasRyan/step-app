@@ -9,7 +9,7 @@ import {
   FormLabel,
 } from "@mui/material";
 
-import { Title, Input, ButtonNext } from "./styled";
+import { Title, Input, ButtonNext, BackButton } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -20,6 +20,14 @@ export function Step3() {
   const { state, dispatch } = useStep();
 
   useEffect(() => {
+    if (
+      state.name === "" &&
+      state.birthday === "" &&
+      state.profession === "" &&
+      state.contacts === ""
+    ) {
+      navigate("/");
+    }
     dispatch({
       type: StepActions.setCurrentStep,
       payload: 3,
@@ -28,6 +36,20 @@ export function Step3() {
 
   const handleNextStep = () => {
     if (
+      state.continuousMedication.length >= 3 &&
+      state.hormonalDysfunction.length >= 3 &&
+      state.eatingHabits !== "" &&
+      state.intestine !== "" &&
+      state.physicalActivity.length >= 3 &&
+      state.gestation.length >= 3 &&
+      state.chronicHealth !== "" &&
+      state.hernia !== "" &&
+      state.hypertension !== "" &&
+      state.cardiac !== "" &&
+      state.urinary.length >= 3 &&
+      state.cramps !== "" &&
+      state.surgery !== "" &&
+      state.column.length >= 3 &&
       state.competent !== "" &&
       state.dynamicTonicity !== "" &&
       state.tonicityRest !== "" &&
@@ -217,7 +239,7 @@ export function Step3() {
         </Grid>
       </Grid>
       <ButtonNext onClick={handleNextStep}>Enviar</ButtonNext>
-      <Link to="/step2">volta</Link>
+      <BackButton to="/step2">volta</BackButton>
     </Container>
   );
 }

@@ -1,4 +1,5 @@
 import { TextField } from "@mui/material";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Title = styled.h1``;
@@ -19,4 +20,10 @@ export const ButtonNext = styled.button`
   &:hover {
     background-color: #e5e5e5;
   }
+`;
+
+export const BackButton = styled(Link)`
+  font-size: 16px;
+  text-decoration: none;
+  padding: 20px 40px;
 `;
