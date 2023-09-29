@@ -3,8 +3,13 @@ import { Button, Grid, TextField } from "@mui/material";
 
 export const Title = styled.h1``;
 
+export const GridBox = styled(Grid)`
+  width: 500px;
+`;
+
 export const Input = styled(TextField)`
-  width: 300px;
+  width: 100%;
+  min-width: 100px;
 `;
 
 export const ButtonNext = styled.button`

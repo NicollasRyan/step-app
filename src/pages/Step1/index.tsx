@@ -18,26 +18,27 @@ export function Step1() {
   }, []);
 
   const handleNextStep = () => {
-    if (
-      state.name !== "" &&
-      state.birthday !== "" &&
-      state.profession !== "" &&
-      state.contacts !== ""
-    ) {
-      navigate("/step2");
-    } else {
-      alert("Preencha todos os dados!");
-    }
+    // if (
+    //   state.name !== "" &&
+    //   state.birthday !== "" &&
+    //   state.profession !== "" &&
+    //   state.contacts !== ""
+    // ) {
+    //   navigate("/step2");
+    // } else {
+    //   alert("Preencha todos os dados!");
+    // }
+    navigate("/step2");
   };
 
   return (
     <Container>
       <Title>Indentficação:</Title>
-      <Grid container spacing={2}>
-        <Grid item xs={7}>
+      <Grid container spacing={4}>
+        <Grid item xs={6}>
           <Input
             label="Nome"
-            variant="standard"
+            variant="outlined"
             value={state.name}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
@@ -47,24 +48,23 @@ export function Step1() {
             }}
           />
         </Grid>
-        <Grid style={{ display: "flex", flexDirection: "column" }} item xs={7}>
-          <FormLabel>Data de nacimento</FormLabel>
+        <Grid item xs={6}>
           <Input
-            type="date"
-            variant="standard"
-            value={state.birthday}
+            label="Email ou telefone"
+            variant="outlined"
+            value={state.contacts}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
-                type: StepActions.setBirthday,
+                type: StepActions.setContacts,
                 payload: e.target.value,
               });
             }}
           />
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={6}>
           <Input
             label="Profissão"
-            variant="standard"
+            variant="outlined"
             value={state.profession}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
@@ -74,14 +74,15 @@ export function Step1() {
             }}
           />
         </Grid>
-        <Grid item xs={7}>
+        <Grid style={{ display: "flex", flexDirection: "column" }} item xs={7}>
+          <FormLabel>Data de nacimento</FormLabel>
           <Input
-            label="Email ou telefone"
-            variant="standard"
-            value={state.contacts}
+            type="date"
+            variant="outlined"
+            value={state.birthday}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
-                type: StepActions.setContacts,
+                type: StepActions.setBirthday,
                 payload: e.target.value,
               });
             }}

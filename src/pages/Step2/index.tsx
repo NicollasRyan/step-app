@@ -31,14 +31,14 @@ export function Step2() {
   const { state, dispatch } = useStep();
 
   useEffect(() => {
-    if (
-      state.name === "" &&
-      state.birthday === "" &&
-      state.profession === "" &&
-      state.contacts === ""
-    ) {
-      navigate("/");
-    }
+    // if (
+    //   state.name === "" &&
+    //   state.birthday === "" &&
+    //   state.profession === "" &&
+    //   state.contacts === ""
+    // ) {
+    //   navigate("/");
+    // }
     dispatch({
       type: StepActions.setCurrentStep,
       payload: 2,
@@ -91,7 +91,7 @@ export function Step2() {
           {inputContinuousMedication && (
             <Input
               label="Qual?"
-              variant="standard"
+              variant="outlined"
               value={state.continuousMedication}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -121,7 +121,7 @@ export function Step2() {
           {inputHormonalDysfunction && (
             <Input
               label="Qual?"
-              variant="standard"
+              variant="outlined"
               value={state.hormonalDysfunction}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -199,7 +199,7 @@ export function Step2() {
           {inputPhysicalActivity && (
             <Input
               label="Qual?"
-              variant="standard"
+              variant="outlined"
               value={state.physicalActivity}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -229,7 +229,7 @@ export function Step2() {
           {inputGestation && (
             <Input
               label="Tempo da útima?"
-              variant="standard"
+              variant="outlined"
               value={state.gestation}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -323,7 +323,7 @@ export function Step2() {
           {inputUrinary && (
             <Input
               label="Em que momento?"
-              variant="standard"
+              variant="outlined"
               value={state.urinary}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -385,7 +385,7 @@ export function Step2() {
           {inputColumn && (
             <Input
               label="EVA:"
-              variant="standard"
+              variant="outlined"
               value={state.column}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({

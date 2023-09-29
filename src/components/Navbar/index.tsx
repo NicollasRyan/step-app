@@ -1,3 +1,11 @@
+import { Steps } from "../steps";
+import { NavbarBox } from "./styled";
+
 export function Navbar() {
-  return <h1>Navbar</h1>;
+  return (
+    <NavbarBox>
+      <h1>Navbar</h1>
+      <Steps />
+    </NavbarBox>
+  );
 }

@@ -15,6 +15,7 @@ export const ContainerStep = styled.div`
   margin: 0 auto;
   position: relative;
   margin-bottom: 25px;
+  background-color: #d1d1d1;
 
   /* background-color: black; */
 
