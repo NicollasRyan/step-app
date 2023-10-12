@@ -9,7 +9,7 @@ import {
   FormLabel,
 } from "@mui/material";
 
-import { Title, Input, ButtonNext, BackButton } from "./styled";
+import { Title, Input, ButtonNext, BackButton, BoxBottom } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -236,8 +236,10 @@ export function Step3() {
           />
         </Grid>
       </Grid>
-      <ButtonNext onClick={handleNextStep}>Enviar</ButtonNext>
-      <BackButton to="/step2">volta</BackButton>
+      <BoxBottom>
+        <BackButton to="/step2">volta</BackButton>
+        <ButtonNext onClick={handleNextStep}>Enviar</ButtonNext>
+      </BoxBottom>
     </Container>
   );
 }

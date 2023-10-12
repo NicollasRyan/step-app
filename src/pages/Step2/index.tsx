@@ -9,7 +9,7 @@ import {
   FormLabel,
 } from "@mui/material";
 
-import { Title, Input, BackButton, ButtonNext } from "./styled";
+import { Title, Input, BackButton, ButtonNext, BoxBottom } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect, useState } from "react";
 // import { DateField } from "@mui/x-date-pickers";
@@ -71,8 +71,8 @@ export function Step2() {
   return (
     <Container>
       <Title>Como anda seu fisico? :</Title>
-      <Grid container spacing={2}>
-        <Grid item xs={7}>
+      <Grid container spacing={4}>
+        <Grid item xs={5}>
           <FormLabel>Uso de algum medicamento contínuo?</FormLabel>
           <RadioGroup
             row
@@ -102,7 +102,7 @@ export function Step2() {
             />
           )}
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Possui alguma disfunção hormonal diagnosticada?</FormLabel>
           <RadioGroup
             row
@@ -132,7 +132,7 @@ export function Step2() {
             />
           )}
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Hábitos alimentares:</FormLabel>
           <RadioGroup
             row
@@ -158,7 +158,7 @@ export function Step2() {
             />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Funcionamento do intestino:</FormLabel>
           <RadioGroup
             row
@@ -180,7 +180,7 @@ export function Step2() {
             />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Atividade física?</FormLabel>
           <RadioGroup
             row
@@ -210,7 +210,7 @@ export function Step2() {
             />
           )}
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Alguma gestação?</FormLabel>
           <RadioGroup
             row
@@ -240,7 +240,7 @@ export function Step2() {
             />
           )}
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Algum problema de saúde crônico?</FormLabel>
           <RadioGroup
             row
@@ -256,7 +256,7 @@ export function Step2() {
             <FormControlLabel label="Não." control={<Radio value="nao" />} />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Já teve alguma hérnia abdominal e corrigiu?</FormLabel>
           <RadioGroup
             row
@@ -272,7 +272,7 @@ export function Step2() {
             <FormControlLabel label="Não." control={<Radio value="nao" />} />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Hipertensão?</FormLabel>
           <RadioGroup
             row
@@ -288,7 +288,7 @@ export function Step2() {
             <FormControlLabel label="Não." control={<Radio value="nao" />} />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Cardiaco?</FormLabel>
           <RadioGroup
             row
@@ -304,7 +304,7 @@ export function Step2() {
             <FormControlLabel label="Não." control={<Radio value="nao" />} />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Alguma queixa de perca urinária:</FormLabel>
           <RadioGroup
             row
@@ -334,7 +334,7 @@ export function Step2() {
             />
           )}
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Cólicas menstruais?</FormLabel>
           <RadioGroup
             row
@@ -350,7 +350,7 @@ export function Step2() {
             <FormControlLabel label="Não." control={<Radio value="nao" />} />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Alguma cirurgia recente?</FormLabel>
           <RadioGroup
             row
@@ -366,7 +366,7 @@ export function Step2() {
             <FormControlLabel label="Não." control={<Radio value="nao" />} />
           </RadioGroup>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <FormLabel>Dores na coluna?</FormLabel>
           <RadioGroup
             row
@@ -397,8 +397,10 @@ export function Step2() {
           )}
         </Grid>
       </Grid>
-      <ButtonNext onClick={handleNextStep}>Proximo</ButtonNext>
-      <BackButton to="/">volta</BackButton>
+      <BoxBottom>
+        <BackButton to="/">volta</BackButton>
+        <ButtonNext onClick={handleNextStep}>Proximo</ButtonNext>
+      </BoxBottom>
     </Container>
   );
 }

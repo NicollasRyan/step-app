@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Container, FormLabel, Grid, Button } from "@mui/material";
 
-import { Title, Input, ButtonNext } from "./styled";
+import { Title, Input, ButtonNext, Input2 } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
 import { ChangeEvent, useEffect } from "react";
 // import { DateField } from "@mui/x-date-pickers";
@@ -76,7 +76,7 @@ export function Step1() {
         </Grid>
         <Grid style={{ display: "flex", flexDirection: "column" }} item xs={7}>
           <FormLabel>Data de nacimento</FormLabel>
-          <Input
+          <Input2
             type="date"
             variant="outlined"
             value={state.birthday}
