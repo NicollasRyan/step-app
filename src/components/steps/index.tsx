@@ -16,36 +16,36 @@ export function Steps() {
 
   return (
     <ContainerStep>
-      <BoxStep active={state.currentStep === 1}>
-        <LinkBox to="/">
+      <LinkBox to="/">
+        <BoxStep active={state.currentStep === 1}>
           <BoxIcon>
             <PersonIcon />
           </BoxIcon>
           <BoxTitle>
             <Title>Indetificação</Title>
           </BoxTitle>
-        </LinkBox>
-      </BoxStep>
-      <BoxStep active={state.currentStep === 2}>
-        <LinkBox to="/step2">
+        </BoxStep>
+      </LinkBox>
+      <LinkBox to="/step2">
+        <BoxStep active={state.currentStep === 2}>
           <BoxIcon>
             <SettingsAccessibilityIcon />
           </BoxIcon>
           <BoxTitle>
             <Title>Informe</Title>
           </BoxTitle>
-        </LinkBox>
-      </BoxStep>
-      <BoxStep active={state.currentStep === 3}>
-        <LinkBox to="/step3">
+        </BoxStep>
+      </LinkBox>
+      <LinkBox to="/step3">
+        <BoxStep active={state.currentStep === 3}>
           <BoxIcon>
             <SendIcon />
           </BoxIcon>
           <BoxTitle>
             <Title>Envio</Title>
           </BoxTitle>
-        </LinkBox>
-      </BoxStep>
+        </BoxStep>
+      </LinkBox>
     </ContainerStep>
   );
 }

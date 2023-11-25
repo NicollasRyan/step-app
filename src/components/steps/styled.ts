@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
-export const LinkBox = styled(Link)`
-  text-decoration: none;
-  color: gray;
-`;
-
 export const ContainerStep = styled.div`
   display: flex;
   gap: 4rem;
@@ -16,11 +11,16 @@ export const ContainerStep = styled.div`
   margin-bottom: 25px;
 `;
 
-export const BoxStep = styled.div<{ active: boolean }>`
+export const LinkBox = styled(Link)`
+  text-decoration: none;
+  color: gray;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+`;
+
+export const BoxStep = styled.div<{ active: boolean }>`
   background-color: ${(props) => (props.active ? "#89F7FF" : "#FFF")};
   border-radius: 10px;
   border: gray solid 1px;
