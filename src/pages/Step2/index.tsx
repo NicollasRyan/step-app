@@ -92,6 +92,7 @@ export function Step2() {
             <Input
               label="Qual?"
               variant="outlined"
+              autoComplete="off"
               value={state.continuousMedication}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -122,6 +123,7 @@ export function Step2() {
             <Input
               label="Qual?"
               variant="outlined"
+              autoComplete="off"
               value={state.hormonalDysfunction}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -131,32 +133,6 @@ export function Step2() {
               }}
             />
           )}
-        </Grid>
-        <Grid item xs={5}>
-          <FormLabel>Hábitos alimentares:</FormLabel>
-          <RadioGroup
-            row
-            value={state.eatingHabits}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              dispatch({
-                type: StepActions.setEatingHabits,
-                payload: e.target.value,
-              });
-            }}
-          >
-            <FormControlLabel
-              label="Livre."
-              control={<Radio value="livre" />}
-            />
-            <FormControlLabel
-              label="Balanceada."
-              control={<Radio value="balanceada" />}
-            />
-            <FormControlLabel
-              label="Acompanhada de um nutricionista"
-              control={<Radio value="acompanhada de um nutricionista" />}
-            />
-          </RadioGroup>
         </Grid>
         <Grid item xs={5}>
           <FormLabel>Funcionamento do intestino:</FormLabel>
@@ -200,6 +176,7 @@ export function Step2() {
             <Input
               label="Qual?"
               variant="outlined"
+              autoComplete="off"
               value={state.physicalActivity}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -230,6 +207,7 @@ export function Step2() {
             <Input
               label="Tempo da útima?"
               variant="outlined"
+              autoComplete="off"
               value={state.gestation}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -324,6 +302,7 @@ export function Step2() {
             <Input
               label="Em que momento?"
               variant="outlined"
+              autoComplete="off"
               value={state.urinary}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -386,6 +365,7 @@ export function Step2() {
             <Input
               label="EVA:"
               variant="outlined"
+              autoComplete="off"
               value={state.column}
               onChange={(e: ChangeEvent<HTMLInputElement>) => {
                 dispatch({
@@ -395,6 +375,32 @@ export function Step2() {
               }}
             />
           )}
+        </Grid>
+        <Grid item xs={5}>
+          <FormLabel>Hábitos alimentares:</FormLabel>
+          <RadioGroup
+            row
+            value={state.eatingHabits}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+              dispatch({
+                type: StepActions.setEatingHabits,
+                payload: e.target.value,
+              });
+            }}
+          >
+            <FormControlLabel
+              label="Livre."
+              control={<Radio value="livre" />}
+            />
+            <FormControlLabel
+              label="Balanceada."
+              control={<Radio value="balanceada" />}
+            />
+            <FormControlLabel
+              label="Acompanhada de um nutricionista"
+              control={<Radio value="acompanhada de um nutricionista" />}
+            />
+          </RadioGroup>
         </Grid>
       </Grid>
       <BoxBottom>
