@@ -11,11 +11,9 @@ export const ContainerStep = styled.div`
   gap: 4rem;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
   margin: 0 auto;
   position: relative;
   margin-bottom: 25px;
-  background-color: #d1d1d1;
 
   /* background-color: black; */
 
@@ -33,10 +31,11 @@ export const BoxStep = styled.div<{ active: boolean }>`
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: ${(props) => (props.active ? "#02E385" : "#FFF")};
-  border-radius: 100px;
+  background-color: ${(props) => (props.active ? "#89F7FF" : "#FFF")};
+  border-radius: 10px;
   border: gray solid 1px;
-  width: 120px;
+  width: 80px;
+  height: 80px;
   padding: 15px;
 `;
 
