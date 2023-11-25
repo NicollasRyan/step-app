@@ -6,3 +6,14 @@ export const NavbarBox = styled.div`
   background-color: #e3e2e2;
   box-shadow: 1px 3px 2px gray;
 `;
+
+export const Title = styled.h1`
+  text-align: center;
+  font-size: 45px;
+  font-family: "Dancing Script", cursive;
+`;
+
+export const Paragraph = styled.p`
+  text-align: center;
+  margin-bottom: 20px;
+`;

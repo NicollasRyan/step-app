@@ -14,16 +14,6 @@ export const ContainerStep = styled.div`
   margin: 0 auto;
   position: relative;
   margin-bottom: 25px;
-
-  /* background-color: black; */
-
-  /* ::after {
-    content: "";
-    width: 50px;
-    border-bottom: 1px solid #ccc;
-    position: absolute;
-    top: 25px; 
-  }*/
 `;
 
 export const BoxStep = styled.div<{ active: boolean }>`

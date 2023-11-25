@@ -1,10 +1,11 @@
 import { Steps } from "../steps";
-import { NavbarBox } from "./styled";
+import { NavbarBox, Title, Paragraph } from "./styled";
 
 export function Navbar() {
   return (
     <NavbarBox>
-      <h1>Navbar</h1>
+      <Title>Denise Bonfim</Title>
+      <Paragraph>Reabilitação Abdominal</Paragraph>
       <Steps />
     </NavbarBox>
   );
