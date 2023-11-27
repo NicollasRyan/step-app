@@ -31,14 +31,14 @@ export function Step2() {
   const { state, dispatch } = useStep();
 
   useEffect(() => {
-    // if (
-    //   state.name === "" &&
-    //   state.birthday === "" &&
-    //   state.profession === "" &&
-    //   state.contacts === ""
-    // ) {
-    //   navigate("/");
-    // }
+    if (
+      state.name === "" &&
+      state.birthday === "" &&
+      state.profession === "" &&
+      state.contacts === ""
+    ) {
+      navigate("/");
+    }
     dispatch({
       type: StepActions.setCurrentStep,
       payload: 2,

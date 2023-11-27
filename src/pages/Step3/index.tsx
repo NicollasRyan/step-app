@@ -19,14 +19,14 @@ export function Step3() {
   const { state, dispatch } = useStep();
 
   useEffect(() => {
-    // if (
-    //   state.name === "" &&
-    //   state.birthday === "" &&
-    //   state.profession === "" &&
-    //   state.contacts === ""
-    // ) {
-    //   navigate("/");
-    // }
+    if (
+      state.name === "" &&
+      state.birthday === "" &&
+      state.profession === "" &&
+      state.contacts === ""
+    ) {
+      navigate("/");
+    }
     dispatch({
       type: StepActions.setCurrentStep,
       payload: 3,
@@ -34,34 +34,35 @@ export function Step3() {
   }, []);
 
   const handleNextStep = () => {
-    // if (
-    //   state.continuousMedication.length >= 3 &&
-    //   state.hormonalDysfunction.length >= 3 &&
-    //   state.eatingHabits !== "" &&
-    //   state.intestine !== "" &&
-    //   state.physicalActivity.length >= 3 &&
-    //   state.gestation.length >= 3 &&
-    //   state.chronicHealth !== "" &&
-    //   state.hernia !== "" &&
-    //   state.hypertension !== "" &&
-    //   state.cardiac !== "" &&
-    //   state.urinary.length >= 3 &&
-    //   state.cramps !== "" &&
-    //   state.surgery !== "" &&
-    //   state.column.length >= 3 &&
-    //   state.competent !== "" &&
-    //   state.dynamicTonicity !== "" &&
-    //   state.tonicityRest !== "" &&
-    //   state.dome !== "" &&
-    //   state.diastasis !== ""
-    // ) {
-    //   const current = new Date();
-    //   const formattedDate = current.toDateString();
-    //   state.formattedDate = formattedDate;
-    //   console.log(state);
-    // } else {
-    //   alert("Preencha todos os dados!");
-    // }
+    if (
+      state.continuousMedication.length >= 3 &&
+      state.hormonalDysfunction.length >= 3 &&
+      state.eatingHabits !== "" &&
+      state.intestine !== "" &&
+      state.physicalActivity.length >= 3 &&
+      state.gestation.length >= 3 &&
+      state.chronicHealth !== "" &&
+      state.hernia !== "" &&
+      state.hypertension !== "" &&
+      state.cardiac !== "" &&
+      state.urinary.length >= 3 &&
+      state.cramps !== "" &&
+      state.surgery !== "" &&
+      state.column.length >= 3 &&
+      state.competent !== "" &&
+      state.dynamicTonicity !== "" &&
+      state.tonicityRest !== "" &&
+      state.dome !== "" &&
+      state.diastasis !== ""
+    ) {
+      const current = new Date();
+      const formattedDate = current.toDateString();
+      state.formattedDate = formattedDate;
+      console.log(state);
+    } else {
+      alert("Preencha todos os dados!");
+    }
+    alert("Pronto, suas informações ja foram enviadas");
   };
 
   return (
