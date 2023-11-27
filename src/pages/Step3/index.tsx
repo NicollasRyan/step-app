@@ -7,16 +7,19 @@ import {
   RadioGroup,
   Radio,
   FormLabel,
+  Alert,
 } from "@mui/material";
 
 import { Title, Input, ButtonNext, BackButton, BoxBottom } from "./styled";
 import { useStep, StepActions } from "../../context/StepContext";
-import { ChangeEvent, useEffect } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Step3() {
   const navigate = useNavigate();
   const { state, dispatch } = useStep();
+
+  const [validateFields, setValidateFields] = useState(false);
 
   useEffect(() => {
     if (
@@ -53,16 +56,20 @@ export function Step3() {
       state.dynamicTonicity !== "" &&
       state.tonicityRest !== "" &&
       state.dome !== "" &&
-      state.diastasis !== ""
+      state.diastasis !== "" &&
+      state.bellyButton >= 1 &&
+      state.infraAbdomina >= 1 &&
+      state.supraAbdominal >= 1 &&
+      state.waist >= 1
     ) {
       const current = new Date();
       const formattedDate = current.toDateString();
       state.formattedDate = formattedDate;
       console.log(state);
+      alert("Pronto, suas informações foram enviadas!");
     } else {
-      alert("Preencha todos os dados!");
+      setValidateFields(true);
     }
-    alert("Pronto, suas informações ja foram enviadas");
   };
 
   return (
@@ -237,6 +244,10 @@ export function Step3() {
           />
         </Grid>
       </Grid>
+
+      {validateFields && (
+        <Alert severity="error">Preencha todos os dados!</Alert>
+      )}
       <BoxBottom>
         <BackButton to="/step2">volta</BackButton>
         <ButtonNext onClick={handleNextStep}>Enviar</ButtonNext>
