@@ -18,16 +18,16 @@ export function Step1() {
   }, []);
 
   const handleNextStep = () => {
-    // if (
-    //   state.name !== "" &&
-    //   state.birthday !== "" &&
-    //   state.profession !== "" &&
-    //   state.contacts !== ""
-    // ) {
-    //   navigate("/step2");
-    // } else {
-    //   alert("Preencha todos os dados!");
-    // }
+    if (
+      state.name !== "" &&
+      state.birthday !== "" &&
+      state.profession !== "" &&
+      state.contacts !== ""
+    ) {
+      navigate("/step2");
+    } else {
+      alert("Preencha todos os dados!");
+    }
     navigate("/step2");
   };
 
@@ -39,6 +39,7 @@ export function Step1() {
           <Input
             label="Nome"
             variant="outlined"
+            autoComplete="off"
             value={state.name}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
@@ -52,6 +53,7 @@ export function Step1() {
           <Input
             label="Email ou telefone"
             variant="outlined"
+            autoComplete="off"
             value={state.contacts}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
@@ -65,6 +67,7 @@ export function Step1() {
           <Input
             label="Profissão"
             variant="outlined"
+            autoComplete="off"
             value={state.profession}
             onChange={(e: ChangeEvent<HTMLInputElement>) => {
               dispatch({
