@@ -7,6 +7,7 @@ import {
   RadioGroup,
   Radio,
   FormLabel,
+  Alert,
 } from "@mui/material";
 
 import { Title, Input, BackButton, ButtonNext, BoxBottom } from "./styled";
@@ -29,6 +30,8 @@ export function Step2() {
 
   const navigate = useNavigate();
   const { state, dispatch } = useStep();
+
+  const [validateFields, setValidateFields] = useState(false);
 
   useEffect(() => {
     if (
@@ -64,7 +67,7 @@ export function Step2() {
     ) {
       navigate("/step3");
     } else {
-      alert("Preencha todos os dados!");
+      setValidateFields(true);
     }
   };
 
@@ -403,6 +406,9 @@ export function Step2() {
           </RadioGroup>
         </Grid>
       </Grid>
+      {validateFields && (
+        <Alert severity="error">Preencha todos os dados!</Alert>
+      )}
       <BoxBottom>
         <BackButton to="/">volta</BackButton>
         <ButtonNext onClick={handleNextStep}>Proximo</ButtonNext>
