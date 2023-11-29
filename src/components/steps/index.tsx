@@ -10,6 +10,7 @@ import {
   LinkBox,
   BoxStep,
 } from "./styled";
+import { useState } from "react";
 
 export function Steps() {
   const { state } = useStep();

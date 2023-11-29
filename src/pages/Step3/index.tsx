@@ -66,7 +66,10 @@ export function Step3() {
       const current = new Date();
       const formattedDate = current.toDateString();
       state.formattedDate = formattedDate;
-      console.log(state);
+      dispatch({
+        type: StepActions.setCurrentStep,
+        payload: 4,
+      });
       setSuccess(true);
       setValidateFields(false);
     } else {
@@ -252,7 +255,12 @@ export function Step3() {
       )}
       {success && <Alert>Pronto, suas informações foram enviadas!</Alert>}
       <BoxBottom>
-        <BackButton to="/step2">volta</BackButton>
+        {success ? (
+          <ButtonNext disabled={true}>Voltar</ButtonNext>
+        ) : (
+          <BackButton to="/step2">volta</BackButton>
+        )}
+
         <ButtonNext onClick={handleNextStep} disabled={success ? true : false}>
           Enviar
         </ButtonNext>
