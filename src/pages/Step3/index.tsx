@@ -20,6 +20,7 @@ export function Step3() {
   const { state, dispatch } = useStep();
 
   const [validateFields, setValidateFields] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     if (
@@ -66,7 +67,8 @@ export function Step3() {
       const formattedDate = current.toDateString();
       state.formattedDate = formattedDate;
       console.log(state);
-      alert("Pronto, suas informações foram enviadas!");
+      setSuccess(true);
+      setValidateFields(false);
     } else {
       setValidateFields(true);
     }
@@ -248,9 +250,12 @@ export function Step3() {
       {validateFields && (
         <Alert severity="error">Preencha todos os dados!</Alert>
       )}
+      {success && <Alert>Pronto, suas informações foram enviadas!</Alert>}
       <BoxBottom>
         <BackButton to="/step2">volta</BackButton>
-        <ButtonNext onClick={handleNextStep}>Enviar</ButtonNext>
+        <ButtonNext onClick={handleNextStep} disabled={success ? true : false}>
+          Enviar
+        </ButtonNext>
       </BoxBottom>
     </Container>
   );
