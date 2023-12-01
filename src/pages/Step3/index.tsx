@@ -70,8 +70,8 @@ export function Step3() {
         type: StepActions.setCurrentStep,
         payload: 4,
       });
+      navigate("/concluded");
       setSuccess(true);
-      setValidateFields(false);
     } else {
       setValidateFields(true);
     }
@@ -253,14 +253,8 @@ export function Step3() {
       {validateFields && (
         <Alert severity="error">Preencha todos os dados!</Alert>
       )}
-      {success && <Alert>Pronto, suas informações foram enviadas!</Alert>}
       <BoxBottom>
-        {success ? (
-          <ButtonNext disabled={true}>Voltar</ButtonNext>
-        ) : (
-          <BackButton to="/step2">volta</BackButton>
-        )}
-
+        <BackButton to="/step2">volta</BackButton>
         <ButtonNext onClick={handleNextStep} disabled={success ? true : false}>
           Enviar
         </ButtonNext>
